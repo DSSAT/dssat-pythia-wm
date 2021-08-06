@@ -5,7 +5,7 @@ RUN sed -i "s/^exit 101$/exit 0/" /usr/sbin/policy-rc.d && \
 apt update && \
 apt install -y --no-install-recommends sudo git curl build-essential gfortran cmake \
 python3 python3-pip \
-r-base libcurl4-openssl-dev libgdal-dev libudunits2-dev libssl-dev
+r-base libcurl4-openssl-dev libgdal-dev libudunits2-dev libssl-dev vim-tiny
 
 
 # Add the default clouseau user
