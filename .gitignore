@@ -1,0 +1,4 @@
+#ignore UltraEdit project files
+*.prj
+*.pui
+*.bak

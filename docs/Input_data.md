@@ -1,4 +1,4 @@
-# DSSAT Input Data #
+# DSSAT Input Data
 
 Each simulation of DSSAT-CSM requires four types of input data: crop management, weather, soils, and genetics. The following sections describe how each of these are parameterized for the Ethiopia WM Experiment for the four crops provided: maize, wheat, teff, and sorghum. 
 
@@ -12,26 +12,108 @@ Management data for baseline conditions, i.e., for current farmer practice, defi
 
 Each simulation consisting of a crop, cropping season, scenario, management regimen, and pixel is simulated for 36 years of weather data, 1984 through 2019. High spatial variability results from combinations of cropping season, management practices, soils, weather, harvested areas, and genetics which influence production across the country.
 
-1.7	DSSAT-pythia post-processing 
-DSSAT-CSM predicts yield and other variables for each simulation. A post-processor is used to compute production (yield multiplied by harvested area) and to aggregate production for the four management regimens. A simplified set of output data, produced for WM interfaces, contains only the location (latitude and longitude), harvest date, and production. These are stored in datasets grouped by crop, cropping season, and scenario.
+## Detailed description of Model inputs and outputs
 
-2.	Detailed description of Model inputs and outputs
+### GIS data layers
+#### Weather data
+Daily solar radiation and maximum and minimum temperature were obtained from NASA POWER (Zhang et al., 2007, power.larc.nasa.gov). Daily rainfall was collected from CHIRPS (Funk et al., 2015, legacy.chg.ucsb.edu/data/chirps/index.html). The resolution for the NASA POWER data is 0.5 × 0.5 degrees and for the rainfall data is 0.05 × 0.05 degrees. Data were merged at the higher resolution for use as DSSAT model inputs.
 
-2.1	GIS data layers
-Weather data: Daily solar radiation and maximum and minimum temperature were obtained from NASA POWER (Zhang et al., 2007, power.larc.nasa.gov). Daily rainfall was collected from CHIRPS (Funk et al., 2015, legacy.chg.ucsb.edu/data/chirps/index.html). The resolution for the NASA POWER data is 0.5 × 0.5 degrees and for the rainfall data is 0.05 × 0.05 degrees. Data were merged at the higher resolution for use as DSSAT model inputs.
+#### Soil data
+The soil database corresponds to the Global High-Resolution Soil Profile Database (Han et al., 2015a, b, dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/1PEEY0). Soil organic carbon was considered to be too high within this database and therefore, the soil organic carbon from the Harvest Choice 27 generic soil database (Koo and Dimes, 2010, dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/20299) was selected to be used for this project.
 
-Soil data: The soil database corresponds to the Global High-Resolution Soil Profile Database (Han et al., 2015a, b, dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/1PEEY0). Soil organic carbon was considered to be too high within this database and therefore, the soil organic carbon from the Harvest Choice 27 generic soil database (Koo and Dimes, 2010, dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/20299) was selected to be used for this project.
+#### Harvested areas
+For each pixel, four management regimens are defined. Harvested areas for each of the management types is provided by the SPAM Global spatially disaggregated crop production statistics data for 2010, version 1.1-version 3. (IFPRI, 2019, [www.mapspam.info](https://www.mapspam.info/data/)). These define cropland harvested areas for each crop within each geographic pixel at a 5 arc-minute resolution. Harvested areas are provided for four management types: irrigated, high fertilizer input; rainfed, high fertilizer input; rainfed, low fertilizer input; and rainfed, no fertilizer. Field crop management practices are defined separately for the four management types as described below. These harvested areas are used in a post-processor with DSSAT-simulated yields to compute production in each pixel and for each management type. These can then be scaled up to any specified areal boundary, such as country-level or woreda-level production.
 
-Harvested areas: For each pixel, four management regimens are defined. Harvested areas for each of the management types is provided by the SPAM Global spatially disaggregated crop production statistics data for 2010, version 1.1-version 3. (IFPRI, 2019, https://www.mapspam.info/data/). These define cropland harvested areas for each crop within each geographic pixel at a 5 arc-minute resolution. Harvested areas are provided for four management types: irrigated, high fertilizer input; rainfed, high fertilizer input; rainfed, low fertilizer input; and rainfed, no fertilizer. Field crop management practices are defined separately for the four management types as described below. These harvested areas are used in a post-processor with DSSAT-simulated yields to compute production in each pixel and for each management type. These can then be scaled up to any specified areal boundary, such as country-level or woreda-level production.
+*Table. Planting dates for each Zone*
+<table>
+	<thead>
+		<tr>
+			<th>Cropping Season</th>
+			<th align="center">Zone 1-North & West</th>
+			<th align="center">Zone 2-Central</th>
+			<th align="center">Zone 3-South & East</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td >Maize, sorghum - Meher</td>
+			<td align="center">May 1 – Jun 12</td>
+			<td align="center">Jun 1 – Jul 13</td>
+			<td align="center">Sep 1 – Oct 13</td>
+		</tr>
+		<tr>
+			<td>Maize, sorghum - Belg</td>
+			<td align="center">-</td>
+			<td align="center">Feb 1 – Mar 15</td>
+			<td align="center">Mar 1 – Apr 12</td>
+		</tr>
+		<tr>
+			<td>Wheat - Meher</td>
+			<td align="center">May 1 – June 30</td>
+			<td align="center">Jun 1 – Jul 31</td>
+			<td align="center">Sep 1 – Oct 31</td>
+		</tr>
+		<tr>
+			<td>Wheat - Belg</td>
+			<td align="center">-</td>
+			<td align="center">Feb 1 – Apr 2</td>
+			<td align="center">Mar 1 – Apr 30</td>
+		</tr>
+		<tr>
+			<td>Teff - Meher</td>
+			<td align="center">May 1 – Jun 12</td>
+			<td align="center">Jun 1 – Jul 13</td>
+			<td align="center">Sep 1 – Oct 13</td>
+		</tr>
+		<tr>
+			<td>Teff - Belg</td>
+			<td align="center">-</td>
+			<td align="center">Feb 1 – Mar 15</td>
+			<td align="center">Mar 1 – Apr 12</td>
+		</tr>
+	</tbody>
+</table>
 
-Planting zones: For WM simulations, Ethiopia was divided into three planting zones which define ranges of planting dates for each crop and each cropping season. Figure 2 shows the zones which define cropping seasons, planting dates, and cultivars as described in the “Other fixed DSSAT inputs and modeling assumptions” section below. These zones were defined based on rainfall patterns as described in “An atlas of Ethiopian livelihoods” (USAID, 2006).
+
+
+SPAM data layers provide a total harvested area for each crop and each of four management types. The expert modeler made assumptions regarding how these harvested areas are partitioned to Meher and Belg seasons as shown in Table 3. These assumptions were gleaned from literature and statistics and evaluated in aggregate for the country based on CSA reports.
+
+*Table. Partitioning of harvested area between Meher and Belg seasons*
+<table>
+	<thead>
+		<tr>
+			<th>Cropping Season</th>
+			<th align="center">Zone 1-North & West</th>
+			<th align="center">Zone 2-Central</th>
+			<th align="center">Zone 3-South & East</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td >Meher (all crops)</td>
+			<td align="center">100%</td>
+			<td align="center">75%</td>
+			<td align="center">25%</td>
+		</tr>
+		<tr>
+			<td>Belg (all crops)</td>
+			<td align="center">0%</td>
+			<td align="center">25%</td>
+			<td align="center">75%</td>
+		</tr>
+	</tbody>
+</table>
+
+
+#### Planting zones
+For WM simulations, Ethiopia was divided into three planting zones which define ranges of planting dates for each crop and each cropping season. Figure 2 shows the zones which define cropping seasons, planting dates, and cultivars as described in the “Other fixed DSSAT inputs and modeling assumptions” section below. These zones were defined based on rainfall patterns as described in “An atlas of Ethiopian livelihoods” (USAID, 2006).
 
  
 Figure 2.  Ethiopia planting zones. 
 
-2.2	Other fixed DSSAT inputs and modeling assumptions
+### Other fixed DSSAT inputs and modeling assumptions
 
-2.2.1	Planting information
+#### Planting information
 Planting dates are defined in Table 2 by crop and season and by planting zone. The dates in Table 2 represent a planting window, or range of possible dates for planting. In the DSSAT-CSM model, crop planting occurs on the first day within this window for which soil moisture and temperature are within acceptable ranges. These planting date windows are based on FAO (2019) crop calendar data, on published papers in the region (various), and on personal communication with agronomists in Ethiopia.
 
 
@@ -50,17 +132,9 @@ Wheat – Belg	--	Feb 1 – Apr 2	Mar 1 – Apr 30
 Teff – Meher	May 1 – Jun 12	Jun 1 – Jul 13	Sep 1 – Oct 13
 Teff - Belg	--	Feb 1 – Mar 15	Mar 1 – Apr 12
 
-SPAM data layers provide a total harvested area for each crop and each of four management types. The expert modeler made assumptions regarding how these harvested areas are partitioned to Meher and Belg seasons as shown in Table 3. These assumptions were gleaned from literature and statistics and evaluated in aggregate for the country based on CSA reports.
 
-Table 3. Partitioning of harvested area between Meher and Belg seasons
-Cropping Season	Zone 1
-North & West	Zone 2
-Central	Zone 3
-South & East
-Meher (all crops)	100%	75%	25%
-Belg (all crops)	0%	25%	75%
-
-Cultivars selected for these simulations are shown in Table 4 along with the references for each.
+#### Cultivars 
+Cultviars selected for these simulations are shown in Table 4 along with the references for each.
 
 Table 4. Crop cultivars used in WM simulations
 Crop	Season	Cultivar	Reference
@@ -70,7 +144,7 @@ Sorghum	Meher & Belg	TESHALE	Getachew et al. (2021, under review)
 Wheat	Meher & Belg	HAR2501	Araya et al., (2019)
 Teff	Meher & Belg	DZ-01-354	Teklu & Tefera (2005), Paff & Asseng (2019) 
 
-2.2.2	Management regimens
+#### Management regimens
 Four management regimens are simulated for each pixel, each with different management inputs. These management regimens are linked to the harvested areas in the SPAM GIS data layers, as described above. Table 3 lists the model input data that are based on the four management regimens for all crops.
 
 Table 5. Management inputs by crop and management regimen
