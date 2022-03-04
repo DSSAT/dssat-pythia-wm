@@ -28,8 +28,8 @@ Hoogenboom, G., C.H. Porter, V. Shelia, K.J. Boote, U. Singh, J.W. White, L.A. H
 Jones, J.W., G. Hoogenboom, C.H. Porter, K.J. Boote, W.D. Batchelor, L.A. Hunt, P.W. Wilkens, U. Singh, A.J. Gijsman, and J.T. Ritchie. 2003. DSSAT Cropping System Model. European Journal of Agronomy 18:235-265.
 
 
-<!-- Next page:
+Next page:
 
-[DSSAT Input Data](Input_data.md) -->
+[DSSAT Input Data](Input_data.md)
 
 [Home](index.md)
