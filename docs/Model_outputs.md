@@ -18,9 +18,9 @@ DSSAT has additional variables that could be of use to CauseMos users, that have
 1.	**“crop per drop”**, the crop yield divided by the amount of rainfall plus irrigation (kg ha<sup>-1</sup> mm<sup>-1</sup>). This is a measure of the water use efficiency of a crop.
 2.	**“crop per person”** is the crop production in an area divided by the number of people in that area. This is a useful measurement of how well an area might feed it’s people. For urban areas, the number is not as useful a measure, as there are more people with fewer farms. It does not account for imported food or food that is transported from one area to another.
 
-<!-- Next page:
+Next page:
 
-[DSSAT Model simulation types](Model_types.md) -->
+[DSSAT Model simulation types](Model_types.md)
 
 [Home](index.md)
 
