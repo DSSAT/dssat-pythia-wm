@@ -2,21 +2,21 @@
 
 Each simulation of DSSAT-CSM requires four types of input data: crop management, weather, soils, and genetics. The following sections describe how each of these are parameterized for the Ethiopia WM Experiment for the four crops provided: maize, wheat, teff, and sorghum. 
 
-Although DSSAT-CSM was developed as a field scale model, simulating conditions at a single location, it can be used in a spatial application by gridding the land surface and providing representative model inputs for each pixel on which a crop is grown. For WM, we use a 5 arc-minute resolution (about 10 km) and provide data on soil parameters, daily weather data, and harvested areas as raster data at that resolution or higher. These raster data are described under “GIS data layers” below.
+<!-- Although DSSAT-CSM was developed as a field scale model, simulating conditions at a single location, it can be used in a spatial application by gridding the land surface and providing representative model inputs for each pixel on which a crop is grown. For WM, we use a 5 arc-minute resolution (about 10 km) and provide data on soil parameters, daily weather data, and harvested areas as raster data at that resolution or higher. These raster data are described under â€œGIS data layersâ€ below.
 
-For Ethiopia, two seasons can be simulated for each crop: meher, the main cropping season, and belg, the shorter season. Some areas have only one unimodal season, generally associated with the meher. These cropping seasons and the associated planting data are discussed below in "Planting information”. 
+For Ethiopia, two seasons can be simulated for each crop: meher, the main cropping season, and belg, the shorter season. Some areas have only one unimodal season, generally associated with the meher. These cropping seasons and the associated planting data are discussed below in "Planting informationâ€. 
 
 Four different management regimens are simulated, representing irrigated, high fertilizer; rainfed, high fertilizer; rainfed, low fertilizer; and rainfed, no fertilizer. Each of these management types is associated with a different harvested area in each pixel of land area. 
 
-Management data for baseline conditions, i.e., for current farmer practice, define the crops and cultivars planted, planting dates and densities, fertilizer application rates, irrigation rates, and other management practices. Once the baseline conditions have been fully described, scenarios can be imposed by perturbing these data. For example, the “tunable knob” selecting an amount of increase to fertilizer application rates allows a user to ask “what if” questions, such as “What would be the expected increase in production if we subsidized fertilizers in Ethiopia”?
+Management data for baseline conditions, i.e., for current farmer practice, define the crops and cultivars planted, planting dates and densities, fertilizer application rates, irrigation rates, and other management practices. Once the baseline conditions have been fully described, scenarios can be imposed by perturbing these data. For example, the â€œtunable knobâ€ selecting an amount of increase to fertilizer application rates allows a user to ask â€œwhat ifâ€ questions, such as â€œWhat would be the expected increase in production if we subsidized fertilizers in Ethiopiaâ€?
 
 Each simulation consisting of a crop, cropping season, scenario, management regimen, and pixel is simulated for 36 years of weather data, 1984 through 2019. High spatial variability results from combinations of cropping season, management practices, soils, weather, harvested areas, and genetics which influence production across the country.
 
-<!-- ## Detailed description of Model inputs and outputs
+## Detailed description of Model inputs and outputs
 
 ### GIS data layers
 #### Weather data
-Daily solar radiation and maximum and minimum temperature were obtained from NASA POWER (Zhang et al., 2007, power.larc.nasa.gov). Daily rainfall was collected from CHIRPS (Funk et al., 2015, legacy.chg.ucsb.edu/data/chirps/index.html). The resolution for the NASA POWER data is 0.5 × 0.5 degrees and for the rainfall data is 0.05 × 0.05 degrees. Data were merged at the higher resolution for use as DSSAT model inputs.
+Daily solar radiation and maximum and minimum temperature were obtained from NASA POWER (Zhang et al., 2007, power.larc.nasa.gov). Daily rainfall was collected from CHIRPS (Funk et al., 2015, legacy.chg.ucsb.edu/data/chirps/index.html). The resolution for the NASA POWER data is 0.5 Ã— 0.5 degrees and for the rainfall data is 0.05 Ã— 0.05 degrees. Data were merged at the higher resolution for use as DSSAT model inputs.
 
 #### Soil data
 The soil database corresponds to the Global High-Resolution Soil Profile Database (Han et al., 2015a, b, dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/1PEEY0). Soil organic carbon was considered to be too high within this database and therefore, the soil organic carbon from the Harvest Choice 27 generic soil database (Koo and Dimes, 2010, dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/20299) was selected to be used for this project.
@@ -37,39 +37,39 @@ For each pixel, four management regimens are defined. Harvested areas for each o
 	<tbody>
 		<tr>
 			<td >Maize, sorghum - Meher</td>
-			<td align="center">May 1 – Jun 12</td>
-			<td align="center">Jun 1 – Jul 13</td>
-			<td align="center">Sep 1 – Oct 13</td>
+			<td align="center">May 1 â€“ Jun 12</td>
+			<td align="center">Jun 1 â€“ Jul 13</td>
+			<td align="center">Sep 1 â€“ Oct 13</td>
 		</tr>
 		<tr>
 			<td>Maize, sorghum - Belg</td>
 			<td align="center">-</td>
-			<td align="center">Feb 1 – Mar 15</td>
-			<td align="center">Mar 1 – Apr 12</td>
+			<td align="center">Feb 1 â€“ Mar 15</td>
+			<td align="center">Mar 1 â€“ Apr 12</td>
 		</tr>
 		<tr>
 			<td>Wheat - Meher</td>
-			<td align="center">May 1 – June 30</td>
-			<td align="center">Jun 1 – Jul 31</td>
-			<td align="center">Sep 1 – Oct 31</td>
+			<td align="center">May 1 â€“ June 30</td>
+			<td align="center">Jun 1 â€“ Jul 31</td>
+			<td align="center">Sep 1 â€“ Oct 31</td>
 		</tr>
 		<tr>
 			<td>Wheat - Belg</td>
 			<td align="center">-</td>
-			<td align="center">Feb 1 – Apr 2</td>
-			<td align="center">Mar 1 – Apr 30</td>
+			<td align="center">Feb 1 â€“ Apr 2</td>
+			<td align="center">Mar 1 â€“ Apr 30</td>
 		</tr>
 		<tr>
 			<td>Teff - Meher</td>
-			<td align="center">May 1 – Jun 12</td>
-			<td align="center">Jun 1 – Jul 13</td>
-			<td align="center">Sep 1 – Oct 13</td>
+			<td align="center">May 1 â€“ Jun 12</td>
+			<td align="center">Jun 1 â€“ Jul 13</td>
+			<td align="center">Sep 1 â€“ Oct 13</td>
 		</tr>
 		<tr>
 			<td>Teff - Belg</td>
 			<td align="center">-</td>
-			<td align="center">Feb 1 – Mar 15</td>
-			<td align="center">Mar 1 – Apr 12</td>
+			<td align="center">Feb 1 â€“ Mar 15</td>
+			<td align="center">Mar 1 â€“ Apr 12</td>
 		</tr>
 	</tbody>
 </table>
@@ -106,7 +106,7 @@ SPAM data layers provide a total harvested area for each crop and each of four m
 
 
 #### Planting zones
-For WM simulations, Ethiopia was divided into three planting zones which define ranges of planting dates for each crop and each cropping season. Figure 2 shows the zones which define cropping seasons, planting dates, and cultivars as described in the “Other fixed DSSAT inputs and modeling assumptions” section below. These zones were defined based on rainfall patterns as described in “An atlas of Ethiopian livelihoods” (USAID, 2006).
+For WM simulations, Ethiopia was divided into three planting zones which define ranges of planting dates for each crop and each cropping season. Figure 2 shows the zones which define cropping seasons, planting dates, and cultivars as described in the â€œOther fixed DSSAT inputs and modeling assumptionsâ€ section below. These zones were defined based on rainfall patterns as described in â€œAn atlas of Ethiopian livelihoodsâ€ (USAID, 2006).
 
  
 Figure 2.  Ethiopia planting zones. 
@@ -125,12 +125,12 @@ Crop - Season	Planting dates for each Zone (Figure 1) and
 North & West	Zone 2
 Central	Zone 3
 South & East
-Maize, sorghum – Meher	May 1 – Jun 12	Jun 1 – Jul 13	Sep 1 – Oct 13
-Maize, sorghum – Belg	--	Feb 1 – Mar 15	Mar 1 – Apr 12
-Wheat – Meher	May 1 – June 30	Jun 1 – Jul 31	Sep 1 – Oct 31
-Wheat – Belg	--	Feb 1 – Apr 2	Mar 1 – Apr 30
-Teff – Meher	May 1 – Jun 12	Jun 1 – Jul 13	Sep 1 – Oct 13
-Teff - Belg	--	Feb 1 – Mar 15	Mar 1 – Apr 12
+Maize, sorghum â€“ Meher	May 1 â€“ Jun 12	Jun 1 â€“ Jul 13	Sep 1 â€“ Oct 13
+Maize, sorghum â€“ Belg	--	Feb 1 â€“ Mar 15	Mar 1 â€“ Apr 12
+Wheat â€“ Meher	May 1 â€“ June 30	Jun 1 â€“ Jul 31	Sep 1 â€“ Oct 31
+Wheat â€“ Belg	--	Feb 1 â€“ Apr 2	Mar 1 â€“ Apr 30
+Teff â€“ Meher	May 1 â€“ Jun 12	Jun 1 â€“ Jul 13	Sep 1 â€“ Oct 13
+Teff - Belg	--	Feb 1 â€“ Mar 15	Mar 1 â€“ Apr 12
 
 
 #### Cultivars 
