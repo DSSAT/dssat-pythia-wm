@@ -168,3 +168,5 @@ Planting depth (cm)	All	5	3	0.9	3
 Fertilizer was assumed to be applied in two equal applications on the day of planting and 30 days after planting.  The fertilizer type was assumed to be urea, broadcast over the field, then incorporated into the topsoil to a depth of 5 cm.
 
  -->
+ 
+ [Home](index.md)
