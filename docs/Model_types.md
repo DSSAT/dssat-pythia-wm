@@ -8,7 +8,7 @@ Three types of DSSAT model are available for use in Dojo and CauseMos. These are
 Each of these model types is described in separate sections below.
 
 
-<!-- ## DSSAT Sensitivity model ##
+## DSSAT Sensitivity model ##
 
 Hypothetical scenarios can be imposed by the general modeler to modify baseline conditions (i.e., current farmer practices) to study "what-if" scenarios or to look at the sensitivity of the system to these variables. In the WM DSSAT Sensitivity model, three input values can be modified to create scenarios:
 -	Fertilizer inputs can be modified over a range of valid values by selecting a **“Fertilizer N increase”** option, which allows a user to increase the amount of fertilizer applied to fields above the current farmer practice. This is useful for fertilizer subsidy investigations, for example. Values of fertilizer N increase are limited to a few options between zero (the current farmer practice) and +200 kg[N] above current farmer practice. Additional fertilizer amounts are expressed as kilograms of elemental nitrogen per hectare.
@@ -29,7 +29,7 @@ The yield forecast model is used to predict the crop growth and development in t
 
 The only user choice in this model configuration is the forecast date. Forecast dates have been pre-selected at one-week intervals from March 11, 2022 through May 13, 2022. The user should select the date which has most recently occurred. For example, if a user is running a prediction on April 12, the most recent available forecast date is April 8. Weather data will be updated just prior to these forecast dates so the user has access to the most recent weather data available for the simulations. 
 
-Next page:
+<!-- Next page:
 
 [DSSAT Model containers](DSSAT_model_containers.md) -->
 
