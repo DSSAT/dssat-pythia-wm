@@ -14,7 +14,7 @@ DSSAT has been in used by more than 16,500 researchers, educators, consultants, 
 - [DSSAT main website](https://dssat.net/)
 - [DSSAT repositories](https://github.com/dssat)
 - [DSSAT-CSM repository](https://github.com/dssat/dssat-csm-os)
-- [DSSAT-CSM list of output variables definitions]([https://github.com/DSSAT/dssat-csm-os/blob/develop/Data/DATA.CDE)
+- [DSSAT-CSM list of output variables definitions](https://github.com/DSSAT/dssat-csm-os/blob/develop/Data/DATA.CDE)
 - [DSSAT documentation](https://github.com/dssat/documentation) 
 - [DSSAT-pythia documentation](https://pythia-framework.readthedocs.io/en/latest/)
 - [DSSAT-pythia-aggregation](https://github.com/DSSAT/supermaas-aggregate-pythia-outputs)
