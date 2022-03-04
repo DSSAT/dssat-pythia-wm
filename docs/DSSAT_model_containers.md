@@ -8,8 +8,8 @@ The DSSAT-pythia config file controls the simulation including parallelization, 
 
 A post-processing script takes model outputs and calculates total production and other output variables for each pixel, storing the resulting data in a dataset for further analysis, mapping, and exploration by an analyst.
 
-<!-- Next page:
+Next page:
 
-[General description of the DSSAT model](DSSAT-CSM.md) -->
+[General description of the DSSAT model](DSSAT-CSM.md)
 
 [Home](index.md)
