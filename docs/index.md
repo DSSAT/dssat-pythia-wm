@@ -1,4 +1,4 @@
-# DSSAT User’s Guide for World Modelers
+# DSSAT User's Guide for World Modelers
 
 Prepared for the March 2022 World Modelers Embed exercise
 
