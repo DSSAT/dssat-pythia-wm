@@ -16,13 +16,18 @@ Each simulation consisting of a crop, cropping season, scenario, management regi
 
 ### GIS data layers
 #### Weather data
-Daily solar radiation and maximum and minimum temperature were obtained from NASA POWER (Zhang et al., 2007, power.larc.nasa.gov). Daily rainfall was collected from CHIRPS (Funk et al., 2015, legacy.chg.ucsb.edu/data/chirps/index.html). The resolution for the NASA POWER data is 0.5 × 0.5 degrees and for the rainfall data is 0.05 × 0.05 degrees. Data were merged at the higher resolution for use as DSSAT model inputs.
+Daily solar radiation and maximum and minimum temperature were obtained from NASA POWER (Zhang et al., 2007, [power.larc.nasa.gov](https://power.larc.nasa.gov/)). Daily rainfall was collected from CHIRPS (Funk et al., 2015, [data.chc.ucsb.edu/products/CHIRPS-2.0](https://data.chc.ucsb.edu/products/CHIRPS-2.0/)). The resolution for the NASA POWER data is 0.5 × 0.5 degrees and for the rainfall data is 0.05 × 0.05 degrees. Data were merged at the higher resolution for use as DSSAT model inputs.
 
 #### Soil data
-The soil database corresponds to the Global High-Resolution Soil Profile Database (Han et al., 2015a, b, dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/1PEEY0). Soil organic carbon was considered to be too high within this database and therefore, the soil organic carbon from the Harvest Choice 27 generic soil database (Koo and Dimes, 2010, dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/20299) was selected to be used for this project.
+The soil database corresponds to the Global High-Resolution Soil Profile Database (Han et al., 2015a, b, dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/1PEEY0). Soil organic carbon was considered to be too high within this database and therefore, the soil organic carbon from the Harvest Choice 27 generic soil database (Koo and Dimes, 2010, [dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/20299](https://dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/20299)) was selected to be used for this project.
 
-#### Harvested areas
-For each pixel, four management regimens are defined. Harvested areas for each of the management types is provided by the SPAM Global spatially disaggregated crop production statistics data for 2010, version 1.1-version 3. (IFPRI, 2019, [www.mapspam.info](https://www.mapspam.info/data/)). These define cropland harvested areas for each crop within each geographic pixel at a 5 arc-minute resolution. Harvested areas are provided for four management types: irrigated, high fertilizer input; rainfed, high fertilizer input; rainfed, low fertilizer input; and rainfed, no fertilizer. Field crop management practices are defined separately for the four management types as described below. These harvested areas are used in a post-processor with DSSAT-simulated yields to compute production in each pixel and for each management type. These can then be scaled up to any specified areal boundary, such as country-level or woreda-level production.
+#### Planting zones
+For WM simulations, Ethiopia was divided into three planting zones which define ranges of planting dates for each crop and each cropping season. The map below shows the zones which define cropping seasons, planting dates, and cultivars as described in the “Other fixed DSSAT inputs and modeling assumptions” section below. These zones were defined based on rainfall patterns as described in “An atlas of Ethiopian livelihoods” (USAID, 2006).
+
+
+![image](https://raw.githubusercontent.com/DSSAT/dssat-pythia-wm/master/docs/images/Ethiopia_planting_zones.jpg)
+Map. Ethiopia planting zones. 
+
 
 *Table. Planting dates for each Zone*
 <table>
@@ -74,7 +79,11 @@ For each pixel, four management regimens are defined. Harvested areas for each o
 	</tbody>
 </table>
 
+Planting dates are defined in by crop and season and by planting zone. The dates in Table 2 represent a planting window, or range of possible dates for planting. In the DSSAT-CSM model, crop planting occurs on the first day within this window for which soil moisture and temperature are within acceptable ranges. These planting date windows are based on FAO (2019) crop calendar data, on published papers in the region (various), and on personal communication with agronomists in Ethiopia.
 
+
+#### Harvested areas
+For each pixel, four management regimens are defined. Harvested areas for each of the management types is provided by the SPAM Global spatially disaggregated crop production statistics data for 2010, version 1.1-version 3. (IFPRI, 2019, [www.mapspam.info](https://www.mapspam.info/data/)). These define cropland harvested areas for each crop within each geographic pixel at a 5 arc-minute resolution. Harvested areas are provided for four management types: irrigated, high fertilizer input; rainfed, high fertilizer input; rainfed, low fertilizer input; and rainfed, no fertilizer. Field crop management practices are defined separately for the four management types as described below. These harvested areas are used in a post-processor with DSSAT-simulated yields to compute production in each pixel and for each management type. These can then be scaled up to any specified areal boundary, such as country-level or woreda-level production.
 
 SPAM data layers provide a total harvested area for each crop and each of four management types. The expert modeler made assumptions regarding how these harvested areas are partitioned to Meher and Belg seasons as shown in Table 3. These assumptions were gleaned from literature and statistics and evaluated in aggregate for the country based on CSA reports.
 
@@ -105,68 +114,189 @@ SPAM data layers provide a total harvested area for each crop and each of four m
 </table>
 
 
-#### Planting zones
-For WM simulations, Ethiopia was divided into three planting zones which define ranges of planting dates for each crop and each cropping season. Figure 2 shows the zones which define cropping seasons, planting dates, and cultivars as described in the “Other fixed DSSAT inputs and modeling assumptions” section below. These zones were defined based on rainfall patterns as described in “An atlas of Ethiopian livelihoods” (USAID, 2006).
-
- 
-Figure 2.  Ethiopia planting zones. 
 
 ### Other fixed DSSAT inputs and modeling assumptions
-
-#### Planting information
-Planting dates are defined in Table 2 by crop and season and by planting zone. The dates in Table 2 represent a planting window, or range of possible dates for planting. In the DSSAT-CSM model, crop planting occurs on the first day within this window for which soil moisture and temperature are within acceptable ranges. These planting date windows are based on FAO (2019) crop calendar data, on published papers in the region (various), and on personal communication with agronomists in Ethiopia.
-
-
-
-<!-- Table 2. Planting dates for each crop, season, and planting zone
-Crop - Season	Planting dates for each Zone (Figure 1) and 
-(percent of harvested area allocated to each planting season)
-	Zone 1
-North & West	Zone 2
-Central	Zone 3
-South & East
-Maize, sorghum – Meher	May 1 – Jun 12	Jun 1 – Jul 13	Sep 1 – Oct 13
-Maize, sorghum – Belg	--	Feb 1 – Mar 15	Mar 1 – Apr 12
-Wheat – Meher	May 1 – June 30	Jun 1 – Jul 31	Sep 1 – Oct 31
-Wheat – Belg	--	Feb 1 – Apr 2	Mar 1 – Apr 30
-Teff – Meher	May 1 – Jun 12	Jun 1 – Jul 13	Sep 1 – Oct 13
-Teff - Belg	--	Feb 1 – Mar 15	Mar 1 – Apr 12
-
 
 #### Cultivars 
 Cultviars selected for these simulations are shown in Table 4 along with the references for each.
 
-Table 4. Crop cultivars used in WM simulations
-Crop	Season	Cultivar	Reference
-Maize	Meher	BH660	Araya et al. (2015)
-Maize	Belg	DSSAT short season	Hoogenboom et al. (2019b)
-Sorghum	Meher & Belg	TESHALE	Getachew et al. (2021, under review)
-Wheat	Meher & Belg	HAR2501	Araya et al., (2019)
-Teff	Meher & Belg	DZ-01-354	Teklu & Tefera (2005), Paff & Asseng (2019) 
+*Table. Crop cultivars used in WM simulations*
+<table>
+	<thead>
+		<tr>
+			<th>Crop</th>
+			<th>Season</th>
+			<th>Cultivar</th>
+			<th>Reference</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td >Maize</td>
+			<td>Meher</td>
+			<td>BH660</td>
+			<td>Araya et al. (2015)</td>
+		</tr>
+		<tr>
+			<td>Maize</td>
+			<td>Belg</td>
+			<td>DSSAT short season</td>
+			<td>Hoogenboom et al. (2019b)</td>
+		</tr>
+		<tr>
+			<td >Sorghum</td>
+			<td>Meher & Belg</td>
+			<td>TESHALE</td>
+			<td>Getachew et al. (2021)</td>
+		</tr>
+		<tr>
+			<td>Wheat</td>
+			<td>Meher & Belg</td>
+			<td>HAR2501</td>
+			<td>Araya et al., (2019)</td>
+		</tr>
+		<tr>
+			<td >Teff</td>
+			<td>Meher & Belg</td>
+			<td>DZ-01-354</td>
+			<td>Teklu & Tefera (2005), Paff & Asseng (2019) </td>
+		</tr>
+	</tbody>
+</table>
+
 
 #### Management regimens
 Four management regimens are simulated for each pixel, each with different management inputs. These management regimens are linked to the harvested areas in the SPAM GIS data layers, as described above. Table 3 lists the model input data that are based on the four management regimens for all crops.
 
-Table 5. Management inputs by crop and management regimen
-Variable	Management regimen	Maize	Wheat	Teff	Sorghum
-Irrigation	Irrigated, high N	Automatic, computed by model
-	Rainfed, high N	None
-	Rainfed, low N	None
-	Rainfed, no N	None
-Fertilizer, kg[N]/ha	Irrigated, high N	100	100	50	100
-	Rainfed, high N	100	100	50	100
-	Rainfed, low N	10	10	10	10
-	Rainfed, no N	0	0	0	0
-Applied manure (kg dry matter/ha)	Irrigated, high N	0	0	0	0
-	Rainfed, high N	0	0	0	0
-	Rainfed, low N	500	500	500	500
-	Rainfed, no N	500	500	500	500
-Planting density (plants/m2)	All	5	250	900	9
-Row spacing (cm)	All	70	16	7	50
-Planting depth (cm)	All	5	3	0.9	3
+*Table. Management inputs by crop and management regimen*
+<table>
+	<thead>
+		<tr>
+			<th>Variable</th>
+			<th>Managment regimen</th>
+			<th>Maize</th>
+			<th>Wheat</th>			
+			<th>Teff</th>			
+			<th>Sorghum</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Irrigation</td>
+			<td>Irrigated, high N</td>
+			<td align="center">Automatic</td>
+			<td align="center">Automatic</td>
+			<td align="center">Automatic</td>
+			<td align="center">Automatic</td>
+		</tr>
+		<tr>
+			<td>Irrigation</td>
+			<td>Rainfed (all)</td>
+			<td align="center">none</td>
+			<td align="center">none</td>
+			<td align="center">none</td>
+			<td align="center">none</td>
+		</tr>
+		<tr>
+			<td>Fertilizer (kg[N]/ha)</td>
+			<td>Irrigated, high N & Rainfed, high N</td>
+			<td align="center">100</td>
+			<td align="center">100</td>
+			<td align="center"> 50</td>
+			<td align="center">100</td>
+		</tr>
+		<tr>
+			<td>Fertilizer (kg[N]/ha)</td>
+			<td>Rainfed, low N</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+			<td align="center">10</td>
+		</tr>
+		<tr>
+			<td>Fertilizer (kg[N]/ha)</td>
+			<td>Rainfed, no N</td>
+			<td align="center">0</td>
+			<td align="center">0</td>
+			<td align="center">0</td>
+			<td align="center">0</td>
+		</tr>
+		<tr>
+			<td>Applied manure (kg[dry matter]/ha)</td>
+			<td>Irrigated, high N & Rainfed, high N</td>
+			<td align="center">0</td>
+			<td align="center">0</td>
+			<td align="center">0</td>
+			<td align="center">0</td>
+		</tr>
+		<tr>
+			<td>Applied manure (kg[dry matter]/ha)</td>
+			<td>Rainfed, low N & Rainfed, no N</td>
+			<td align="center">500</td>
+			<td align="center">500</td>
+			<td align="center">500</td>
+			<td align="center">500</td>
+		</tr>
+		<tr>
+			<td>Planting density (plants/m2)</td>
+			<td>All</td>
+			<td align="center">  5</td>
+			<td align="center">250</td>
+			<td align="center">900</td>
+			<td align="center">  9</td>
+		</tr>
+		<tr>
+			<td>Row spacing (cm)</td>
+			<td>All</td>
+			<td align="center">70</td>
+			<td align="center">16</td>
+			<td align="center"> 7</td>
+			<td align="center">50</td>
+		</tr>
+		<tr>
+			<td>Planting depth (cm)</td>
+			<td>All</td>
+			<td align="center">  5</td>
+			<td align="center">  3</td>
+			<td align="center">0.9</td>
+			<td align="center">  3</td>
+		</tr>
+	</tbody>
+</table>
+
 
 Fertilizer was assumed to be applied in two equal applications on the day of planting and 30 days after planting.  The fertilizer type was assumed to be urea, broadcast over the field, then incorporated into the topsoil to a depth of 5 cm.
 
- -->
- 
+#### References
+Araya, A., Hoogenboom, G., Luedeling, E., Hadgu, K. M., Kisekka, I., and Martorano, L. G. (2015). Assessment of maize growth and yield using crop models under present and future climate in southwestern Ethiopia. Agricultural and Forest Meteorology 214, 252-265.
+
+Araya, A., Prasad, P. V. V., Gowda, P. H., Afewerk, A., Abadi, B., and Foster, A. J. (2019). Modeling irrigation and nitrogen management of wheat in northern Ethiopia. Agricultural Water Management 216, 264-272.
+
+FAO (2019). "GIEWS Country brief Ethiopia." Food and Agriculture Organization of the United Nations.
+
+Funk, C., Peterson, P., Landsfeld, M., Pedreros, D., Verdin, J., Shukla, S., Husak, G., Rowland, J., Harrison, L., Hoell, A., and Michaelsen, J. (2015). The climate hazards infrared precipitation with stations - a new environmental record for monitoring extremes. Scientific data 2, 150066. Earth Engine. https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY.
+
+Getachew, F., Bayabil, H.K., Hoogenboom, G., Teshome, F.T., Zewdu, E. 2021. Irrigation and Shifting Planting Date as Climate Change Adaptation Strategies for sorghum. Agricultural Water Management. Vol 255, 106988. https://doi.org/10.1016/j.agwat.2021.106988 
+
+Han, E., Ines, A., and Koo, J. (2015a). Global high-resolution soil profile database for crop modeling applications.  (H. Dataverse, ed.).
+
+Han, E., Ines, A., and Koo, J. (2015b). Global high-resolution soil profile database for crop modeling applications. Working paper. HarvestChoice/International Food Policy Research Institute (IFPRI), 37 pp.
+
+Hoogenboom, G., C.H. Porter, V. Shelia, K.J. Boote, U. Singh, J.W. White, L.A. Hunt, R. Ogoshi, J.I. Lizaso, J. Koo, S. Asseng, A. Singels, L.P. Moreno, and J.W. Jones. 2019b. Decision Support System for Agrotechnology Transfer (DSSAT) Version 4.7.5 (https://DSSAT.net). DSSAT Foundation, Gainesville, Florida, USA.
+
+IFPRI (2019). Global spatially-disaggregated crop production statistics data for 2010 Version 1.1.  (H. Dataverse, ed.).
+
+Koo, J., and Dimes, J. (2010). HC27: Generic/Prototypical Soil Profiles. International Food Policy Research Institute, Washington, DC., and University of Minnesota, St. Paul, MN. Available online at http://harvestchoice.org/node/2239.
+
+Paff, K., and Asseng, S. (2019). Comparing the effects of growing conditions on simulated Ethiopian tef and wheat yields. Agricultural and Forest Meteorology 266, 208-220.
+
+Teklu, Y., and Tefera, H. (2005). Genetic improvement in grain yield potential and associated agronomic traits of tef (Eragrostis tef). Euphytica 141, 247-254.
+
+USAID (2006). "An atlas of Ethiopian livelihoods. The livelihoods integration unit." International Food Policy Research Institute, Washington DC. / Central Statistical Agency / Ethiopian Development Research Institute, Addis Ababa, Ethiopia. http://foodeconomy.com/wp-content/uploads/2016/02/Atlas-Final-Web-Version-6_14.pdf 
+
+Zhang, T., Chandler, W. S., Hoell, J. M., Westberg, D., Whitlock, C. H., and Stackhouse Jr, P. W. (2007). A Global perspective on renewable energy resources: NASA’s Prediction of Worldwide Energy Resources (POWER) project. In "Proceedings of ISES World Congress 2007" (G. D.Y. and Z. Y., eds.), Vol. I-V, pp. 2636-2640, Berlin, Heidelberg, Germany.
+
+
+
+
  [Home](index.md)
