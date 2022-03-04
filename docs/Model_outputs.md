@@ -20,7 +20,7 @@ DSSAT has additional variables that could be of use to CauseMos users, that have
 
 <!-- Next page:
 
-[DSSAT Model simulation types](Model_types.md)
+[DSSAT Model simulation types](Model_types.md) -->
 
-[Home](index.md) -->
+[Home](index.md)
 
