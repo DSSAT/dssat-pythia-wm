@@ -76,7 +76,7 @@ For each pixel, four management regimens are defined. Harvested areas for each o
 
 
 
-<!-- SPAM data layers provide a total harvested area for each crop and each of four management types. The expert modeler made assumptions regarding how these harvested areas are partitioned to Meher and Belg seasons as shown in Table 3. These assumptions were gleaned from literature and statistics and evaluated in aggregate for the country based on CSA reports.
+SPAM data layers provide a total harvested area for each crop and each of four management types. The expert modeler made assumptions regarding how these harvested areas are partitioned to Meher and Belg seasons as shown in Table 3. These assumptions were gleaned from literature and statistics and evaluated in aggregate for the country based on CSA reports.
 
 *Table. Partitioning of harvested area between Meher and Belg seasons*
 <table>
@@ -118,7 +118,7 @@ Planting dates are defined in Table 2 by crop and season and by planting zone. T
 
 
 
-Table 2. Planting dates for each crop, season, and planting zone
+<!-- Table 2. Planting dates for each crop, season, and planting zone
 Crop - Season	Planting dates for each Zone (Figure 1) and 
 (percent of harvested area allocated to each planting season)
 	Zone 1
