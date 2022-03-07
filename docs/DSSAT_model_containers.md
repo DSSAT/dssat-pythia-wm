@@ -1,6 +1,15 @@
-**DSSAT Modeling containers**
+**DSSAT Model containers**
 
-The Dojo DSSAT models were configured by expert modelers who had knowledge of the cropping systems in East Africa and the DSSAT modeling requirements. The number of input variables that are required by a complex model such as DSSAT are too numerous for a WM user to learn on the fly, but the expert modeler has simplified the interfaces to allow only a few selections that can be made by the general modeler. In Figure 1, these are shown in the box to the right, “General modeler selections”.  These model selections vary depending on the type of model selected.
+Go to <<[Home page](index.md)>>
+
+Go to next page: <<[General description of the DSSAT model](DSSAT-CSM.md)>>
+
+---
+The WM DSSAT models were configured by expert modelers who had knowledge of the cropping systems in East Africa and the DSSAT modeling requirements. The number of input variables that are required by a complex model such as DSSAT are too numerous for a WM user to learn on the fly, but the expert modeler has simplified the interfaces to allow only a few selections that can be made by the general modeler. In the figure below, these are shown in the box to the right, “General modeler selections”.  These model selections vary depending on the type of model selected.
+
+![image](https://raw.githubusercontent.com/DSSAT/dssat-pythia-wm/master/docs/images/Pythia_container_v4_small.jpg)
+
+*Figure. [(Link to larger image)](https://raw.githubusercontent.com/DSSAT/dssat-pythia-wm/master/docs/images/Pythia_container_v4.jpg) DSSAT container for for Ethiopia maize production showing data, processing, and modeling components. A general modeler selects the parameters for a given simulation, which produces a dataset. An analyst accesses the dataset for further analysis and exploration.*
 
 The general modeler selections are stored as metadata which describe both the simulation configuration and the dataset containing final outputs. These metadata are used to modify the DSSAT-pythia configuration file. Some of the metadata describing the simulation are immutable and cannot be modified by the general modeler, such as the spatial resolution of simulations, which are based on the GIS input data layers.
 
@@ -8,8 +17,3 @@ The DSSAT-pythia config file controls the simulation including parallelization, 
 
 A post-processing script takes model outputs and calculates total production and other output variables for each pixel, storing the resulting data in a dataset for further analysis, mapping, and exploration by an analyst.
 
-Next page:
-
-[General description of the DSSAT model](DSSAT-CSM.md)
-
-[Home](index.md)
