@@ -25,7 +25,7 @@ The figure below illustrates a sample DSSAT container as implemented in WM. In t
 
 
 
-*Figure. [(Link to larger image)](https://raw.githubusercontent.com/DSSAT/dssat-pythia-wm/master/docs/images/Pythia_container_v4.jpg) DSSAT container for for Ethiopia maize production showing data, processing, and modeling components. A general modeler selects the parameters for a given simulation, which produces a dataset. An analyst accesses the dataset for further analysis and exploration.*
+*Figure. [(Link to larger image)](DSSAT_container_figure.md) DSSAT container for for Ethiopia maize production showing data, processing, and modeling components. A general modeler selects the parameters for a given simulation, which produces a dataset. An analyst accesses the dataset for further analysis and exploration.*
 
 
 The DSSAT documentation contained herein will be limited to the components:

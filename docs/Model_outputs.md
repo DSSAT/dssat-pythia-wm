@@ -6,8 +6,8 @@ Go to next page: <<[DSSAT Model types](Model_types.md)>>
 
 ---
 DSSAT model outputs are available from two sources in Causemos:
-- From model simulations directly from Causemos, and  
-- From DSSAT datasets, which have been pre-run and archived for access from Causemos. 
+- From DSSAT **model simulations** directly from Causemos, and  
+- From DSSAT **datasets**, which have been pre-run and archived for access from Causemos. 
 
 
 ## Outputs from DSSAT models ##
