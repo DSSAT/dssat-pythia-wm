@@ -1,6 +1,6 @@
 # DSSAT Climate Change model
 
-<!-- Go to <<[Home page](index.md)>>
+Go to <<[Home page](index.md)>>
 
 Go to section home: <<[DSSAT Model simulation types](Model_types.md)>>
 
