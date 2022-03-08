@@ -4,7 +4,7 @@ Go to <<[Home page](index.md)>>
 
 ---
 
-<!-- The DSSAT Cropping System Model (CSM) is the main computational element of the Decision Support System for Agrotechnology Transfer (DSSAT, **[dssat.net](https://dssat.net/)**, Hoogenboom et al., 2019a and 2019b, Jones et al. 2003). DSSAT-CSM calculates expected growth and development of crops based on equations that describe response to management, environmental conditions, and genetic potential. The equations used in CSM comprise a set of differential equations representing rates of growth or development, and rates of soil water and soil nutrient dynamics. Numerical integration over time, with daily or hourly time steps, allows estimation of growth, development, and water and nutrient levels in the plant and soil. 
+The DSSAT Cropping System Model (CSM) is the main computational element of the Decision Support System for Agrotechnology Transfer (DSSAT, **[dssat.net](https://dssat.net/)**, Hoogenboom et al., 2019a and 2019b, Jones et al. 2003). DSSAT-CSM calculates expected growth and development of crops based on equations that describe response to management, environmental conditions, and genetic potential. The equations used in CSM comprise a set of differential equations representing rates of growth or development, and rates of soil water and soil nutrient dynamics. Numerical integration over time, with daily or hourly time steps, allows estimation of growth, development, and water and nutrient levels in the plant and soil. 
 The 42 crop species currently modeling by DSSAT-CSM deal primarily with annual crops including wheat, rice, maize, and various grain legumes but also include herbaceous perennials such as forage legumes and grasses, and vegetable crops such as tomato and peppers. In addition to crop growth and development, the models simulate water and nutrient dynamics in the soil and crop, so processes such as leaching, organic matter decomposition, and runoff are also considered.
 
 DSSAT-CSM requires input data including daily weather data, soil physical and chemical properties, and detailed crop management, such as timing and details of planting, irrigation, fertilizer application, and residue management. An especially challenging set of inputs are the genotype-specific parameters (GSPs) used to quantify how one cultivar differs from another. GSPs are most often estimated through calibration to measurements from field trials. 
@@ -30,4 +30,4 @@ Hoogenboom, G., C.H. Porter, V. Shelia, K.J. Boote, U. Singh, J.W. White, L.A. H
 
 Jones, J.W., G. Hoogenboom, C.H. Porter, K.J. Boote, W.D. Batchelor, L.A. Hunt, P.W. Wilkens, U. Singh, A.J. Gijsman, and J.T. Ritchie. 2003. DSSAT Cropping System Model. European Journal of Agronomy 18:235-265.
 
- -->
+ <!-- -->
