@@ -26,4 +26,4 @@ Hypothetical scenarios can be set within Causemos to modify baseline conditions 
 
 	User selection options include a range of values between 0.25 (25% of recorded rainfall amounts) through 2.0 (double the recorded rainfall amounts).
 
- -->
+ <!-- -->
