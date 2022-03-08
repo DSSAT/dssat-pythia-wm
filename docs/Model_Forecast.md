@@ -1,6 +1,6 @@
 # DSSAT Forecast model
 
-<!-- Go to <<[Home page](index.md)>>
+Go to <<[Home page](index.md)>>
 
 Go to section home: <<[DSSAT Model simulation types](Model_types.md)>>
 
@@ -16,4 +16,4 @@ The DSSAT forecast model is used to predict the crop growth and development in t
 
 The only user choice in this model configuration is the forecast date. Forecast dates have been pre-selected at one-week intervals from March 11, 2022 through May 13, 2022. The user should select the date which has most recently occurred. For example, if a user is running a prediction on April 12, the most recent available forecast date is April 8. Weather data will be updated just prior to these forecast dates so the user has access to the most recent weather data available for the simulations. 
 
- -->
+ <!-- -->
