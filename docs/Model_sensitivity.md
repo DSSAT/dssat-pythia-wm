@@ -4,9 +4,9 @@ Go to <<[Home page](index.md)>>
 
 Go to section home: <<[DSSAT Model simulation types](Model_types.md)>>
 
-Go to subsection <<[DSSAT climate change model](Model_climate_change.md)>>
+- Go to subsection <<[DSSAT climate change model](Model_climate_change.md)>>
 
-Go to subsection <<[DSSAT forecast model](Model_Forecast)>>
+- Go to subsection <<[DSSAT forecast model](Model_Forecast)>>
 
 Go to next page: <<[DSSAT Input Data](Input_data.md)>>
 
