@@ -1,7 +1,7 @@
-Here is some temporary text.
+*DSSAT container for for Ethiopia maize production showing data, processing, and modeling components. A general modeler selects the parameters for a given simulation, which produces a dataset. An analyst accesses the dataset for further analysis and exploration.*
 
-<!-- ![image](https://raw.githubusercontent.com/DSSAT/dssat-pythia-wm/master/docs/images/Pythia_container_v4.jpg)
+![image](https://raw.githubusercontent.com/DSSAT/dssat-pythia-wm/master/docs/images/Pythia_container_v4.jpg)
+         
 
-*Figure. [(Link to larger image)](DSSAT_container_figure.md) DSSAT container for for Ethiopia maize production showing data, processing, and modeling components. A general modeler selects the parameters for a given simulation, which produces a dataset. An analyst accesses the dataset for further analysis and exploration.*
 
--->
+<!-- -->
