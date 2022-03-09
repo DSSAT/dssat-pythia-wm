@@ -4,7 +4,7 @@ Prepared for the March 2022 World Modelers Embed exercise
 Prepared by Cheryl Porter, Gerrit Hoogenboom, Vijaya Joshi, Chris Villalobos, Meng Zhang, Oscar Castillo
 
 Contents: 
-- [DSSAT Outputs: Models and Datasets](Model_outputs.md)
+- [DSSAT Model Outputs](Model_outputs.md)
 
 - [DSSAT Model Types](Model_types.md)
 
