@@ -21,7 +21,3 @@ git checkout tags/2.1.6 -b 2.1.6 && \
 # Install pythia-analytics
 RUN cd /opt && git clone https://github.com/DSSAT/supermaas-aggregate-pythia-outputs pythia-analytics && \
 cd pythia-analytics && git checkout 4062c972097b80ab62309e2d2cea1061264b3f5d -b dev1
-
-# Install dojo-scripts
-RUN cd /usr/local/src && git clone https://github.com/DSSAT/dojo-scripts && \
-cd dojo-scripts && git checkout minified
