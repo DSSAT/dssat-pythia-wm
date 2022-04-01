@@ -15,6 +15,7 @@ make && make install
 RUN curl -sSL https://install.python-poetry.org/ | python3 - && \
 cd /usr/local/src && \
 git clone https://github.com/DSSAT/pythia && cd pythia && \
+git checkout tags/2.1.6 -b 2.1.6 && \
 /root/.local/bin/poetry build && cd dist && pip3 install pythia-2.1.6-py3-none-any.whl
 
 # Install pythia-analytics
