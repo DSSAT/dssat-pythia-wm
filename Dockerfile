@@ -22,5 +22,10 @@ git checkout tags/2.1.6 -b 2.1.6 && \
 RUN cd /opt && git clone https://github.com/DSSAT/supermaas-aggregate-pythia-outputs pythia-analytics && \
 cd pythia-analytics && git checkout 4062c972097b80ab62309e2d2cea1061264b3f5d -b dev1
 
+# Install dojo-scripts
 RUN cd /usr/local/src && git clone https://github.com/DSSAT/dojo-scripts && \
-cd dojo-scripts && git checkout efe367416dd870edc02b8fc0787088dab30437da -b minified
+cd dojo-scripts && git checkout 331130e858f62f1b8fc1d16359feeb7edc08ccc9 -b minified
+
+# Copy large assets
+RUN curl --create-dirs -o /usr/local/share/world-modelers/global-base-latest.tar.bz2 https://data.agmip.org/darpa/global-base-20220218.tar.bz2 && \
+curl --create-dirs -o /usr/local/share/world-modelers/ethiopia-base-latest.tar.bz2 https://data.agmip.org/darpa/ethiopia-base-20220326-1.tar.bz2
