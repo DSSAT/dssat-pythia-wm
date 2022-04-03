@@ -28,4 +28,11 @@ cd dojo-scripts && git checkout 331130e858f62f1b8fc1d16359feeb7edc08ccc9 -b mini
 
 # Copy large assets
 RUN curl --create-dirs -o /usr/local/share/world-modelers/global-base-latest.tar.bz2 https://data.agmip.org/darpa/global-base-20220218.tar.bz2 && \
-curl --create-dirs -o /usr/local/share/world-modelers/ethiopia-base-latest.tar.bz2 https://data.agmip.org/darpa/ethiopia-base-20220326-1.tar.bz2
+curl --create-dirs -o /usr/local/share/world-modelers/ethiopia-base-latest.tar.bz2 https://data.agmip.org/darpa/ethiopia-base-20220326-1.tar.bz2 && \
+chmod 755 /usr/local/share/world-modelers
+
+# Symlink scripts into /usr/local/bin
+RUN ln -s /usr/local/src/dojo-scripts/pipeline.sh /usr/local/bin/pipeline && \
+ln -s /usr/local/src/dojo-scripts/update-image.sh /usr/local/bin/update-image.sh && \
+ln -s /usr/loacl/src/dojo-scripts/tag-images.sh /usr/local/bin/tag-images && \
+ln -s /usr/local/src/dojo-scripts/fix-images.sh /usr/local/bin/fix-image
