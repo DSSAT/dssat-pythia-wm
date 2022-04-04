@@ -24,7 +24,7 @@ cd pythia-analytics && git checkout 4062c972097b80ab62309e2d2cea1061264b3f5d -b 
 
 # Install dojo-scripts
 RUN cd /usr/local/src && git clone https://github.com/DSSAT/dojo-scripts && \
-cd dojo-scripts && git checkout 331130e858f62f1b8fc1d16359feeb7edc08ccc9 -b minified
+cd dojo-scripts && git checkout 0a5c7f4487f56b779b3793b759c2db269f3dbc3a -b eth
 
 # Copy large assets
 RUN curl --create-dirs -o /usr/local/share/world-modelers/global-base-latest.tar.bz2 https://data.agmip.org/darpa/global-base-20220218.tar.bz2 && \
